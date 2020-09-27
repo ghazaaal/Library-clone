@@ -1,0 +1,22 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+
+
+}
+.header__logo{
+
+
+}
+.profile__icon{
+    color: grey;
+}
+.profile__info{
+    display: flex;
+
+}
+.profile__info > h5{
+    color: grey;
+}
