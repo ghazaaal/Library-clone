@@ -1,13 +1,18 @@
 .header{
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    align-items: center;
+    top: 0;
+    z-index:100 ;
+
 
 
 
 }
 .header__logo{
-
+    margin-right: 85px;
+    margin-top: 18px;
+    object-fit: contain ;
 
 }
 .profile__icon{
@@ -15,6 +20,7 @@
 }
 .profile__info{
     display: flex;
+    margin-left: 50px;
 
 }
 .profile__info > h5{

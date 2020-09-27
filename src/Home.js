@@ -7,10 +7,11 @@ import book3 from './book3.png';
 import banner from './banner.png';
 import './Home.css'
 import Category from "./Category";
+import NextPage from './NextPage';
 function Home() {
     return (
 
-        <div >
+        <div className={"home__container"}>
 
             <img className="home__image" src={banner} alt={"homeImage"}/>
             <div className={"home"}>
@@ -193,106 +194,112 @@ function Home() {
 
 
             </div>
+
             </div>
-            <div>
-                <div>
+
+            <div className={"cat"}>
+                <div className={"category__title"}>
                     <h1>دسته بندی</h1>
                 </div>
+                <div className={"category"}>
+                    <Category
+                        title={"کتاب های انگلیسی"}
+                        id={1}
+                    />
+                    <Category
+                        title={"کتاب های رایگان فارسی"}
+                        id={1}
+                    />
+                    <Category
+                        title={"مجلات"}
+                        id={1}
+                    />
+                    <Category
+                        title={"میکروبوک"}
+                        id={1}
+                    />
+                    <Category
+                        title={"بسته های شگفت انگیز کتاب"}
+                        id={1}
+                    />
+                    <Category
+                        title={"داستان و رمان"}
+                        id={1}
+                    />
+                    <Category
+                        title={"شعر"}
+                        id={1}
+                    />
+                    <Category
+                        title={"تبلیغات و بازیابی"}
+                        id={1}
+                    />
+                    <Category
+                        title={"روانشناسی"}
+                        id={1}
+                    />
+                    <Category
+                        title={"مدیریت"}
+                        id={1}
+                    />
+                    <Category
+                        title={"دین و عرفان"}
+                        id={1}
+                    />
+                    <Category
+                        title={"کتاب صوتی  سبک زندگی"}
+                        id={1}
+                    />
+                    <Category
+                        title={"زنان و فمنیسم"}
+                        id={1}
+                    />
+                    <Category
+                        title={"تاریخ"}
+                        id={1}
+                    />
+                    <Category
+                        title={"فلسفه"}
+                        id={1}
+                    />
+                    <Category
+                        title={"اقتصاد"}
+                        id={1}
+                    />
+                    <Category
+                        title={"حقوق"}
+                        id={1}
+                    />
+                    <Category
+                        title={"کودک"}
+                        id={1}
+                    />
+                    <Category
+                        title={"نوجوان"}
+                        id={1}
+                    />
+                    <Category
+                        title={"هنر"}
+                        id={1}
+                    />
+                    <Category
+                        title={"دانشنامه جهان و اسلام"}
+                        id={1}
+                    />
+                    <Category
+                        title={"درسی و کمک درسی"}
+                        id={1}
+                    />
+                    <Category
+                        title={"دانشگاهی"}
+                        id={1}
+                    />
+                </div>
 
-            <Category
-            title={"کتاب های انگلیسی"}
-            id={1}
-            />
-            <Category
-                title={"کتاب های رایگان فارسی"}
-                id={1}
-            />
-            <Category
-                title={"مجلات"}
-                id={1}
-            />
-            <Category
-                title={"میکروبوک"}
-                id={1}
-            />
-            <Category
-                title={"بسته های شگفت انگیز کتاب"}
-                id={1}
-            />
-            <Category
-                title={"داستان و رمان"}
-                id={1}
-            />
-            <Category
-                title={"شعر"}
-                id={1}
-            />
-            <Category
-                title={"تبلیغات و بازیابی"}
-                id={1}
-            />
-            <Category
-                title={"روانشناسی"}
-                id={1}
-            />
-            <Category
-                title={"مدیریت"}
-                id={1}
-            />
-            <Category
-                title={"دین و عرفان"}
-                id={1}
-            />
-            <Category
-                title={"کتاب صوتی  سبک زندگی"}
-                id={1}
-            />
-            <Category
-                title={"زنان و فمنیسم"}
-                id={1}
-            />
-            <Category
-                title={"تاریخ"}
-                id={1}
-            />
-            <Category
-                title={"فلسفه"}
-                id={1}
-            />
-            <Category
-                title={"اقتصاد"}
-                id={1}
-            />
-            <Category
-                title={"حقوق"}
-                id={1}
-            />
-            <Category
-                title={"کودک"}
-                id={1}
-            />
-            <Category
-                title={"نوجوان"}
-                id={1}
-            />
-            <Category
-                title={"هنر"}
-                id={1}
-            />
-            <Category
-                title={"دانشنامه جهان و اسلام"}
-                id={1}
-            />
-            <Category
-                title={"درسی و کمک درسی"}
-                id={1}
-            />
-            <Category
-                title={"دانشگاهی"}
-                id={1}
-            />
+
             </div>
             </div>
+            <NextPage/>
 
         </div>
 

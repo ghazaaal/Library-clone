@@ -1,13 +1,58 @@
-.home__image{
+.home__container{
 
+    max-width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.home__image{
+    margin-left: 20px;
+    width: 100%;
+    margin-right: 85px;
 
 }
 .home__row{
     display: flex;
+    width: 100%;
 
 
 }
 .home{
+    width: 100%;
     display: flex;
 
 }
+.category{
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+}
+.cat{
+
+
+    width: 100%;
+    margin-top: 100px;
+    margin-left: 50px;
+    border: 1px solid;
+    border-top-color: #b420be;
+    height: 900px;
+
+
+}
+.category__title{
+    height: 80px;
+    background-color: #edc9ef;
+    text-align: center;
+    top: 0;
+    padding-top: 20px;
+    color: #b420be;
+
+
+
+}
+
+

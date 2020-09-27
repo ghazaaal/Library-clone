@@ -5,11 +5,15 @@ import './Category.css'
 function Category({title,id}) {
     return (
 
-        <div className="category">
+        <div>
 
             <label className="container">
-                {title}
                 <input type="checkbox" />
+                <span className="checkmark">
+
+                </span>
+                <p>{title}</p>
+
             </label>
 
 
