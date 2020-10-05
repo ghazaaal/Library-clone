@@ -1,5 +1,5 @@
 import React from 'react';
-import './NextPage.css';
+import './assets/NextPage.css';
 
 function NextPage() {
     return (

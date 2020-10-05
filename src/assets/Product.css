@@ -1,0 +1,21 @@
+.product{
+    display: flex;
+    flex-direction:column ;
+    margin-left: 50px;
+    margin-top: 100px;
+    align-items: center;
+    flex: 1 0 21%;
+
+
+}
+.translator{
+    color: #999999;
+}
+.title{
+    margin-top: 30px;
+    color: 	#666666;
+    font-weight: bold;
+}
+.product__image{
+    box-shadow: 0px 30px 40px -25px rgba(0, 0, 0, 1);
+}

@@ -1,0 +1,40 @@
+.category{
+    display: flex;
+
+}
+input[type=checkbox] {
+    display:block;
+    visibility: hidden;
+}
+
+label span
+{
+    background-color: white;
+    border: 1px solid grey;
+    height: 15px;
+    width: 15px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    margin-right: 5px;
+    float: right;
+
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+.container > p{
+    float: right;
+    margin-right: 5px;
+
+}
+.container{
+    align-items: center;
+
+
+}
+.container > p{
+    color: #666666;
+    font-weight: 700;
+}

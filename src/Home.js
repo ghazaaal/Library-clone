@@ -1,305 +1,234 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Product from "./Product";
-import book4 from './book4.png';
-import book1 from './book1.png';
-import book2 from './book2.png';
-import book3 from './book3.png';
-import banner from './banner.png';
-import './Home.css'
+import banner from './assets/images/banner.png';
+import './assets/Home.css'
 import Category from "./Category";
-import NextPage from './NextPage';
+import Pagination from "react-js-pagination";
+import {useStateValue} from "./StateProvider";
+
+
+
 function Home() {
+    const [{basket}]=useStateValue();
+
+    const [results, setResults ] = useState( [] );
+    const todosPerPage = 3;
+    const [ activePage, setCurrentPage ] = useState( 1 );
+
+
+
+
+    const getData=()=>
+    {basket.map((item) =>
+
+        item.results.map((filteredcategory)=>
+            results.push({
+                id : filteredcategory.id,
+                auth : filteredcategory.auth,
+                category : filteredcategory.category,
+                title : filteredcategory.title,
+                translator:filteredcategory.translator,
+                sum:filteredcategory.summary,
+                image:filteredcategory.image})
+
+        )
+
+    );
+        console.log(results);
+        return results;
+
+    };
+    const res = getData();
+
+
+    const indexOfLastTodo  = activePage * todosPerPage;
+    const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
+    const currentTodos     = res.slice( indexOfFirstTodo, indexOfLastTodo );
+
+
+    const renderTodos = currentTodos.map( ( todo, index ) => {
+        console.log(indexOfFirstTodo,indexOfLastTodo);
+
+
+        return <Product
+                    id={todo.id}
+                    image={todo.image}
+        />;
+    } );
+
+    const handlePageChange = ( pageNumber ) => {
+        console.log( `active page is ${ pageNumber }` );
+        setCurrentPage( pageNumber )
+    };
+    const show =(f)=>{
+
+
+        return <div className={"item"}>
+            <Product
+                id={f.id}
+                image={f.image}/>
+        </div>
+
+
+
+
+
+    };
+
     return (
+
 
         <div className={"home__container"}>
 
             <img className="home__image" src={banner} alt={"homeImage"}/>
+
+
             <div className={"home"}>
-            <div>
-
-            <div className={"home__row"}>
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"ملت عشق"}
-                    translator={"الیف شافاک"}
-                    summary={"کتاب ملت عشق دو داستان را به صورت موازی پیش می‌برد. داستان اول، قصه زنی چهل ساله است به نام اللا است که رابطه‌اش با همسرش سرد است و با اینکه متوجه خیانتش شده اما حرفی به همسرش نمی‌زند. اللا در بیست سال زندگی مشترکش دچار روزمرگی بوده و تنها سرگرمی‌اش کلاس آشپزی است. در آستانه چهل سالگی در یک انتشارات مشغول به کار می‌شود. و وظیفه‌اش نوشتن گزارشی برای رمان «کفر شیرین» نوشته «عزیز زاهارا» است. همین اتفاق داستان اول را به داستان دوم نزدیک می‌کند."}
-                    image={book4}
-
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"بیشعوری"}
-                    translator={"خاویر کرمنت"}
-                    summary={""}
-                    image={book3}
-
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"مغازه خودکشی"}
-                    translator={"ژان تولی"}
-                    summary={""}
-                    image={book2}
-
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"جز از کل"}
-                    translator={"استیو تولتز"}
-                    summary={""}
-                    image={book1}
-
-                />
+                <div className={"cont"}>
+                    { basket.map((item) =>
+                    item.results.slice(indexOfFirstTodo, indexOfLastTodo).map(filteredcategory=>
+                        <div className={"item"}>
+                            <Product
+                                id={filteredcategory.id}
+                                image={filteredcategory.image}
+                                translator={filteredcategory.translator}
+                                category_id={filteredcategory.category}
+                                title={filteredcategory.title}
+                                authid={filteredcategory.auth}
+                            />
+                        </div>
+                    )   )
+                }</div>
 
 
-            </div>
-            <div className={"home__row"}>
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"ملت عشق"}
-                    translator={"الیف شافاک"}
-                    summary={"کتاب ملت عشق دو داستان را به صورت موازی پیش می‌برد. داستان اول، قصه زنی چهل ساله است به نام اللا است که رابطه‌اش با همسرش سرد است و با اینکه متوجه خیانتش شده اما حرفی به همسرش نمی‌زند. اللا در بیست سال زندگی مشترکش دچار روزمرگی بوده و تنها سرگرمی‌اش کلاس آشپزی است. در آستانه چهل سالگی در یک انتشارات مشغول به کار می‌شود. و وظیفه‌اش نوشتن گزارشی برای رمان «کفر شیرین» نوشته «عزیز زاهارا» است. همین اتفاق داستان اول را به داستان دوم نزدیک می‌کند."}
-                    image={book4}
-
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"بیشعوری"}
-                    translator={"خاویر کرمنت"}
-                    summary={""}
-                    image={book3}
-
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"مغازه خودکشی"}
-                    translator={"ژان تولی"}
-                    summary={""}
-                    image={book2}
-
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"جز از کل"}
-                    translator={"استیو تولتز"}
-                    summary={""}
-                    image={book1}
-
-                />
 
 
-            </div>
-            <div className={"home__row"}>
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"ملت عشق"}
-                    translator={"الیف شافاک"}
-                    summary={"کتاب ملت عشق دو داستان را به صورت موازی پیش می‌برد. داستان اول، قصه زنی چهل ساله است به نام اللا است که رابطه‌اش با همسرش سرد است و با اینکه متوجه خیانتش شده اما حرفی به همسرش نمی‌زند. اللا در بیست سال زندگی مشترکش دچار روزمرگی بوده و تنها سرگرمی‌اش کلاس آشپزی است. در آستانه چهل سالگی در یک انتشارات مشغول به کار می‌شود. و وظیفه‌اش نوشتن گزارشی برای رمان «کفر شیرین» نوشته «عزیز زاهارا» است. همین اتفاق داستان اول را به داستان دوم نزدیک می‌کند."}
-                    image={book4}
 
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"بیشعوری"}
-                    translator={"خاویر کرمنت"}
-                    summary={""}
-                    image={book3}
+                <div className={"cat"}>
+                    <div className={"category__title"}>
+                        <h1>دسته بندی</h1>
+                    </div>
 
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"مغازه خودکشی"}
-                    translator={"ژان تولی"}
-                    summary={""}
-                    image={book2}
+                    <div className={"category"} >
+                        <Category
+                            title={"همه"}
+                            id={-1}
+                        />
 
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"جز از کل"}
-                    translator={"استیو تولتز"}
-                    summary={""}
-                    image={book1}
+                        <Category
+                            title={"کتاب های انگلیسی"}
+                            id={0}
+                        />
 
-                />
+                        <Category
+                            title={"کتاب های رایگان فارسی"}
+                            id={1}
+
+                        />
 
 
-            </div>
+                        <Category
+                            title={"مجلات"}
+                            id={2}
+                        />
+                        <Category
+                            title={"میکروبوک"}
+                            id={3}
+                        />
+                        <Category
+                            title={"بسته های شگفت انگیز کتاب"}
+                            id={4}
+                        />
+                        <Category
+                            title={"داستان و رمان"}
+                            id={5}
+                        />
+                        <Category
+                            title={"شعر"}
+                            id={6}
+                        />
+                        <Category
+                            title={"تبلیغات و بازیابی"}
+                            id={7}
+                        />
+                        <Category
+                            title={"روانشناسی"}
+                            id={8}
+                        />
+                        <Category
+                            title={"مدیریت"}
+                            id={9}
+                        />
+                        <Category
+                            title={"دین و عرفان"}
+                            id={10}
+                        />
+                        <Category
+                            title={"کتاب صوتی  سبک زندگی"}
+                            id={11}
+                        />
+                        <Category
+                            title={"زنان و فمنیسم"}
+                            id={12}
+                        />
+                        <Category
+                            title={"تاریخ"}
+                            id={13}
+                        />
+                        <Category
+                            title={"فلسفه"}
+                            id={14}
+                        />
+                        <Category
+                            title={"اقتصاد"}
+                            id={15}
+                        />
+                        <Category
+                            title={"حقوق"}
+                            id={16}
+                        />
+                        <Category
+                            title={"کودک"}
+                            id={17}
+                        />
+                        <Category
+                            title={"نوجوان"}
+                            id={18}
+                        />
+                        <Category
+                            title={"هنر"}
+                            id={19}
+                        />
+                        <Category
+                            title={"دانشنامه جهان و اسلام"}
+                            id={20}
+                        />
+                        <Category
+                            title={"درسی و کمک درسی"}
+                            id={21}
+                        />
+                        <Category
+                            title={"دانشگاهی"}
+                            id={22}
+                        />
+                    </div>
 
-            <div className={"home__row"}>
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"ملت عشق"}
-                    translator={"الیف شافاک"}
-                    summary={"کتاب ملت عشق دو داستان را به صورت موازی پیش می‌برد. داستان اول، قصه زنی چهل ساله است به نام اللا است که رابطه‌اش با همسرش سرد است و با اینکه متوجه خیانتش شده اما حرفی به همسرش نمی‌زند. اللا در بیست سال زندگی مشترکش دچار روزمرگی بوده و تنها سرگرمی‌اش کلاس آشپزی است. در آستانه چهل سالگی در یک انتشارات مشغول به کار می‌شود. و وظیفه‌اش نوشتن گزارشی برای رمان «کفر شیرین» نوشته «عزیز زاهارا» است. همین اتفاق داستان اول را به داستان دوم نزدیک می‌کند."}
-                    image={book4}
 
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"بیشعوری"}
-                    translator={"خاویر کرمنت"}
-                    summary={""}
-                    image={book3}
-
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"مغازه خودکشی"}
-                    translator={"ژان تولی"}
-                    summary={""}
-                    image={book2}
-
-                />
-                <Product
-                    id={"12321341"}
-                    authid={"1111"}
-                    category_id={"2222"}
-                    title={"جز از کل"}
-                    translator={"استیو تولتز"}
-                    summary={""}
-                    image={book1}
-
-                />
-
-
-            </div>
-
-            </div>
-
-            <div className={"cat"}>
-                <div className={"category__title"}>
-                    <h1>دسته بندی</h1>
-                </div>
-                <div className={"category"}>
-                    <Category
-                        title={"کتاب های انگلیسی"}
-                        id={1}
-                    />
-                    <Category
-                        title={"کتاب های رایگان فارسی"}
-                        id={1}
-                    />
-                    <Category
-                        title={"مجلات"}
-                        id={1}
-                    />
-                    <Category
-                        title={"میکروبوک"}
-                        id={1}
-                    />
-                    <Category
-                        title={"بسته های شگفت انگیز کتاب"}
-                        id={1}
-                    />
-                    <Category
-                        title={"داستان و رمان"}
-                        id={1}
-                    />
-                    <Category
-                        title={"شعر"}
-                        id={1}
-                    />
-                    <Category
-                        title={"تبلیغات و بازیابی"}
-                        id={1}
-                    />
-                    <Category
-                        title={"روانشناسی"}
-                        id={1}
-                    />
-                    <Category
-                        title={"مدیریت"}
-                        id={1}
-                    />
-                    <Category
-                        title={"دین و عرفان"}
-                        id={1}
-                    />
-                    <Category
-                        title={"کتاب صوتی  سبک زندگی"}
-                        id={1}
-                    />
-                    <Category
-                        title={"زنان و فمنیسم"}
-                        id={1}
-                    />
-                    <Category
-                        title={"تاریخ"}
-                        id={1}
-                    />
-                    <Category
-                        title={"فلسفه"}
-                        id={1}
-                    />
-                    <Category
-                        title={"اقتصاد"}
-                        id={1}
-                    />
-                    <Category
-                        title={"حقوق"}
-                        id={1}
-                    />
-                    <Category
-                        title={"کودک"}
-                        id={1}
-                    />
-                    <Category
-                        title={"نوجوان"}
-                        id={1}
-                    />
-                    <Category
-                        title={"هنر"}
-                        id={1}
-                    />
-                    <Category
-                        title={"دانشنامه جهان و اسلام"}
-                        id={1}
-                    />
-                    <Category
-                        title={"درسی و کمک درسی"}
-                        id={1}
-                    />
-                    <Category
-                        title={"دانشگاهی"}
-                        id={1}
-                    />
                 </div>
 
 
+
             </div>
+            <div className="pagination">
+                <Pagination
+                    activePage={ activePage }
+                    itemsCountPerPage={ 3 }
+                    totalItemsCount={ 4 }
+                    pageRangeDisplayed={ 3 }
+                    onChange={ handlePageChange }
+                />
             </div>
-            <NextPage/>
+
 
         </div>
 
