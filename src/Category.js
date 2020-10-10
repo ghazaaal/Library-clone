@@ -45,6 +45,7 @@ function Category({title,id}) {
         return results;
 
     };
+
     const addToBasket = () => {
         setDes(!des);
 
@@ -84,8 +85,8 @@ function Category({title,id}) {
 
     };
 
-
     const [des, setDes]=useState(false);
+
 
 
 
@@ -99,7 +100,7 @@ function Category({title,id}) {
 
             <label className="container">
                 <input type="checkbox" />
-                <span className="checkmark" >
+                <span  className="checkmark" >
                 </span>
                 <p onClick={addToBasket}>{title}</p>
             </label>

@@ -12,68 +12,63 @@ function Home() {
     const [{basket}]=useStateValue();
 
     const [results, setResults ] = useState( [] );
-    const todosPerPage = 3;
+    const todosPerPage =8;
     const [ activePage, setCurrentPage ] = useState( 1 );
 
 
 
 
-    const getData=()=>
-    {basket.map((item) =>
+        const getData=()=>
+        {basket.map((item) =>
 
-        item.results.map((filteredcategory)=>
-            results.push({
-                id : filteredcategory.id,
-                auth : filteredcategory.auth,
-                category : filteredcategory.category,
-                title : filteredcategory.title,
-                translator:filteredcategory.translator,
-                sum:filteredcategory.summary,
-                image:filteredcategory.image})
+            item.results.map((filteredcategory)=>
+                results.push({
+                    id : filteredcategory.id,
+                    auth : filteredcategory.auth,
+                    category : filteredcategory.category,
+                    title : filteredcategory.title,
+                    translator:filteredcategory.translator,
+                    sum:filteredcategory.summary,
+                    image:filteredcategory.image})
 
-        )
+            )
 
-    );
-        console.log(results);
-        return results;
+        );
+            console.log(results);
+            return results;
 
-    };
-    const res = getData();
+        };
+        getData();
+
+
+
+  //  const res = getData();
 
 
     const indexOfLastTodo  = activePage * todosPerPage;
     const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
-    const currentTodos     = res.slice( indexOfFirstTodo, indexOfLastTodo );
+    //const currentTodos     = res.slice( indexOfFirstTodo, indexOfLastTodo );
 
 
-    const renderTodos = currentTodos.map( ( todo, index ) => {
-        console.log(indexOfFirstTodo,indexOfLastTodo);
-
-
-        return <Product
-                    id={todo.id}
-                    image={todo.image}
-        />;
-    } );
+    const renderTodos =  basket.map((item) =>
+        item.results.slice(indexOfFirstTodo, indexOfLastTodo).map(filteredcategory=>
+            <div className={"item"}>
+                <Product
+                    id={filteredcategory.id}
+                    image={filteredcategory.image}
+                    translator={filteredcategory.translator}
+                    category_id={filteredcategory.category}
+                    title={filteredcategory.title}
+                    authid={filteredcategory.auth}
+                />
+            </div>
+        )   );
 
     const handlePageChange = ( pageNumber ) => {
         console.log( `active page is ${ pageNumber }` );
         setCurrentPage( pageNumber )
     };
-    const show =(f)=>{
 
-
-        return <div className={"item"}>
-            <Product
-                id={f.id}
-                image={f.image}/>
-        </div>
-
-
-
-
-
-    };
 
     return (
 
@@ -85,23 +80,7 @@ function Home() {
 
             <div className={"home"}>
                 <div className={"cont"}>
-                    { basket.map((item) =>
-                    item.results.slice(indexOfFirstTodo, indexOfLastTodo).map(filteredcategory=>
-                        <div className={"item"}>
-                            <Product
-                                id={filteredcategory.id}
-                                image={filteredcategory.image}
-                                translator={filteredcategory.translator}
-                                category_id={filteredcategory.category}
-                                title={filteredcategory.title}
-                                authid={filteredcategory.auth}
-                            />
-                        </div>
-                    )   )
-                }</div>
-
-
-
+                    {renderTodos}</div>
 
 
                 <div className={"cat"}>
@@ -223,7 +202,7 @@ function Home() {
                 <Pagination
                     activePage={ activePage }
                     itemsCountPerPage={ 3 }
-                    totalItemsCount={ 4 }
+                    totalItemsCount={ results.length }
                     pageRangeDisplayed={ 3 }
                     onChange={ handlePageChange }
                 />

@@ -45,7 +45,7 @@ function Login() {
                     <h5>رمز عبور( حداقل ۶ حرف )</h5>
                     <input value={password} onChange={event => setPassword(event.target.value)} type={"password"}/>
                     <button onClick={login}  type={"submit"} className={"btn__signIn"}> ورود</button>
-                    <button onClick={register} className={"btn__createAcc"}>Create your Amazon account</button>
+                    <button onClick={register} className={"btn__createAcc"}>حساب کاربری ندارید؟</button>
                 </form>
 
             </div>

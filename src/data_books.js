@@ -629,7 +629,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 1,
                     "title": "بیگانه",
-                    "image": "book2",
+                    "image": book2,
                     "translator": "وحید علایی"
                 },
                 {
@@ -637,7 +637,7 @@ export const booksData = [
                     "auth": "استیو تولتز",
                     "category": 1,
                     "title": "تنهایی",
-                    "image": "book2",
+                    "image": book2,
                     "translator": "علی انتظاری"
                 },
                 {
@@ -645,7 +645,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 4,
                     "title": "جز از کل",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "غزل قشقایی"
                 },
                 {
@@ -653,7 +653,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 10,
                     "title": "بیگانه",
-                    "image": "book4",
+                    "image": book4,
                     "translator": "وحید علایی"
                 },
                 {
@@ -661,7 +661,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 21,
                     "title": "بیگانه",
-                    "image": "book2",
+                    "image": book2,
                     "translator": "غزل قشقایی"
                 },
                 {
@@ -669,7 +669,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 15,
                     "title": "تنهایی",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "علی انتظاری"
                 },
                 {
@@ -677,7 +677,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 3,
                     "title": "بیگانه",
-                    "image": "book3",
+                    "image": book3,
                     "translator": "علی انتظاری"
                 },
                 {
@@ -685,7 +685,7 @@ export const booksData = [
                     "auth": "استیو تولتز",
                     "category": 18,
                     "title": "بیگانه",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "علی انتظاری"
                 },
                 {
@@ -693,7 +693,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 17,
                     "title": "بیگانه",
-                    "image": "book4",
+                    "image": book4,
                     "translator": "غزل قشقایی"
                 },
                 {
@@ -701,7 +701,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 10,
                     "title": "جز از کل",
-                    "image": "book4",
+                    "image": book4,
                     "translator": "غزل قشقایی"
                 },
                 {
@@ -709,7 +709,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 18,
                     "title": "جز از کل",
-                    "image": "book3",
+                    "image": book3,
                     "translator": "غزل قشقایی"
                 },
                 {
@@ -717,7 +717,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 14,
                     "title": "جز از کل",
-                    "image": "book3",
+                    "image": book3,
                     "translator": "غزل قشقایی"
                 },
                 {
@@ -725,7 +725,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 9,
                     "title": "تنهایی",
-                    "image": "book2",
+                    "image": book2,
                     "translator": "وحید علایی"
                 },
                 {
@@ -733,7 +733,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 17,
                     "title": "بیگانه",
-                    "image": "book4",
+                    "image": book4,
                     "translator": "وحید علایی"
                 },
                 {
@@ -741,7 +741,7 @@ export const booksData = [
                     "auth": "استیو تولتز",
                     "category": 2,
                     "title": "جز از کل",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "علی انتظاری"
                 },
                 {
@@ -749,7 +749,7 @@ export const booksData = [
                     "auth": "استیو تولتز",
                     "category": 4,
                     "title": "تنهایی",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "علی انتظاری"
                 },
                 {
@@ -757,7 +757,7 @@ export const booksData = [
                     "auth": "استیو تولتز",
                     "category": 19,
                     "title": "تنهایی",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "غزل قشقایی"
                 },
                 {
@@ -765,7 +765,7 @@ export const booksData = [
                     "auth": "استیو تولتز",
                     "category": 10,
                     "title": "جز از کل",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "وحید علایی"
                 },
                 {
@@ -773,7 +773,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 3,
                     "title": "تنهایی",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "وحید علایی"
                 },
                 {
@@ -781,7 +781,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 18,
                     "title": "تنهایی",
-                    "image": "book2",
+                    "image": book2,
                     "translator": "وحید علایی"
                 },
                 {
@@ -789,7 +789,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 3,
                     "title": "تنهایی",
-                    "image": "book3",
+                    "image": book3,
                     "translator": "علی انتظاری"
                 },
                 {
@@ -797,7 +797,7 @@ export const booksData = [
                     "auth": "استیو تولتز",
                     "category": 0,
                     "title": "بیگانه",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "وحید علایی"
                 },
                 {
@@ -805,7 +805,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 3,
                     "title": "تنهایی",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "غزل قشقایی"
                 },
                 {
@@ -813,7 +813,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 8,
                     "title": "تنهایی",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "وحید علایی"
                 },
                 {
@@ -4389,7 +4389,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 17,
                     "title": "تنهایی",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "وحید علایی"
                 },
                 {
@@ -4429,7 +4429,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 6,
                     "title": "جز از کل",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "وحید علایی"
                 },
                 {
@@ -4469,7 +4469,7 @@ export const booksData = [
                     "auth": "وحید کهندل",
                     "category": 1,
                     "title": "جز از کل",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "وحید علایی"
                 },
                 {
@@ -4485,7 +4485,7 @@ export const booksData = [
                     "auth": "استیو تولتز",
                     "category": 11,
                     "title": "تنهایی",
-                    "image": "book1",
+                    "image": book1,
                     "translator": "غزل قشقایی"
                 },
                 {
@@ -4493,7 +4493,7 @@ export const booksData = [
                     "auth": "البرکامو",
                     "category": 10,
                     "title": "بیگانه",
-                    "image": "book2",
+                    "image": book2,
                     "translator": "غزل قشقایی"
                 },
                 {
